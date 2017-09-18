@@ -57,6 +57,24 @@ public class SignDB {
 		return result;
 	}
 
+	
+	public boolean updateSignKey(String employeeId){
+		String sql2 = "update user set sign_key=? where employee_id=?";
+		PreparedStatement pst;
+		try {
+			pst = conn.prepareStatement(sql2);
+			pst.setString(1, "shenjianlikey");
+			pst.setString(2, "00000185");
+			int result = pst.executeUpdate();
+			if(result > 0){
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 	public static void main(String[] args) {
 		try {
 			// 调用Class.forName()方法加载驱动程序

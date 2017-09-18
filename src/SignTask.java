@@ -42,7 +42,7 @@ public class SignTask extends TimerTask {
 		String signInparamStr = EncryptUtils.getParameterStr(params);
 		try {
 			signIn = EncryptUtils.encode(signInparamStr);
-
+			
 			System.out.println("签到字符串:" + signIn);
 
 		} catch (Exception e) {
